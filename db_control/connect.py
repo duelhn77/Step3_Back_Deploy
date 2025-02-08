@@ -33,6 +33,11 @@ DATABASE_URL = f"mysql+pymysql://{DB_USER}:{DB_PASSWORD}@{DB_HOST}:{DB_PORT}/{DB
 # エンジンの作成
 engine = create_engine(
     DATABASE_URL,
+    connect_args={
+        "ssl": {
+            "ssl_ca": ssl_cert
+        }
+    },
     echo=True,
     pool_pre_ping=True,
     pool_recycle=3600
