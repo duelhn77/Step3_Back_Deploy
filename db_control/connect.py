@@ -16,6 +16,7 @@ from sqlalchemy import create_engine
 import os
 from pathlib import Path
 from dotenv import load_dotenv
+import pymysql
 
 # 環境変数の読み込み
 base_path = Path(__file__).parents[1] #backendディレクトリへのパス
